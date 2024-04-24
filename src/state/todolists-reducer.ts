@@ -107,7 +107,7 @@ export type SetTodolistsActionType = {
 
 //Thunk
 
-export const fetchTodosThunk = (dispatch: any, getState: () => AppRootStateType) => {
+export const fetchTodosTC = () => (dispatch: any, getState: () => AppRootStateType) => {
     //1. side effects(asynchronous requests)
 
     todolistsAPI.getTodolists()
@@ -115,5 +115,4 @@ export const fetchTodosThunk = (dispatch: any, getState: () => AppRootStateType)
             //2. dispatch actions (thunk)
             dispatch(setTodolistsAC(res.data))
         })
-
 }
